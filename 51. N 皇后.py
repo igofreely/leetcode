@@ -1,3 +1,9 @@
+# 每个Q所能攻击到的格子数量为：3*n-2
+# 要想Q不能互相攻击，必须尽可能多的重叠攻击到的格子
+# 每2个Q攻击的重合最多为4(行、列、对角线*2)
+# (3*n-2)*n-(n-1+1)(n-1)/2*4=n*n
+# 在相同对角：abs(i1-i2)=abs(j1-j2) ,相同斜对角：i1+j1=i2+j2
+# 通过队列实现DFS
 class Solution:
     class Node(object):
         def __init__(self, i, j, result):
